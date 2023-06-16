@@ -37,7 +37,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        node-version: [14, 16]
+        node: [14, 16]
         system: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.system }}
     steps:
@@ -46,7 +46,7 @@ jobs:
       - name: Install Node JS
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node }}
       - name: Cache deps
         uses: actions/cache@v3
         with:
